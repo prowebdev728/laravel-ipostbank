@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Notifications\UserRegistered;
+use App\Profile;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -27,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/profile';
 
     /**
      * Create a new controller instance.
@@ -62,10 +64,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'is_admin' => false,
             'password' => bcrypt($data['password']),
+            //generates random string 20 characters long
+            'verification_code' => base64_encode($data['email']),
+            'settings' => ''
         ]);
+
+        if (!$user->is_admin){
+            if(config('app.env') === 'production'){
+                $user->notify(new UserRegistered($user));
+            }
+
+            $profile = new Profile(); // fill the empty profile
+            $profile->user_id = $user->id;
+            $profile->avatar = config('app.defaultPplaceholder');
+
+            $profile->save();
+        }else{
+            $profile = new Profile(); // fill the empty profile
+            $profile->user_id = $user->id;
+            $profile->avatar = config('app.defaultPplaceholder');
+            $profile->save();
+        }
+
+
+        return $user;
     }
 }

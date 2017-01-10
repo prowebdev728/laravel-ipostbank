@@ -16,6 +16,15 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
+        'App\Events\ArticleWasSubmitted' => [
+            'App\Listeners\UserArticleSubmissionConfirmation',
+        ],
+        'App\Events\ArticleWasApproved' => [
+            'App\Listeners\ArticleApprovelNotificationToUser',
+        ],
+        'App\Events\ArticleWasUsed' => [
+            'App\Listeners\ArticleUsedNotification',
+        ]
     ];
 
     /**

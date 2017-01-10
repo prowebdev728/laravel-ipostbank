@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \UxWeb\SweetAlert\ConvertMessagesIntoSweatAlert::class,
         ],
 
         'api' => [
@@ -52,7 +53,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'Age' => \App\Http\Middleware\AgeMiddleware::class,
-        'Role' => \App\Http\Middleware\RoleMiddleware::class,
+        'admin' => 'App\Http\Middleware\Admin', // this line right here
     ];
 }

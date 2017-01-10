@@ -12,7 +12,19 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'iPost Bank',
+    'version' => '1.0.0',
+
+    'defaultPplaceholder' => '/img/palce-holder.png',
+
+    'mininame' => 'iP Bank',
+
+
+    'domain' => env('APP_DOMAIN', 'localhost.com'),
+
+
+    'default_normal_price' => '5',
+    'default_low_price' => '3',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,7 +174,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Illuminate\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -178,6 +189,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        Grimthorr\LaravelUserSettings\ServiceProvider::class
 
     ],
 
@@ -226,8 +243,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Form' => Illuminate\Html\FormFacade::class,
-        'Form' => Illuminate\Html\HtmlFacade::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'Setting' => Grimthorr\LaravelUserSettings\Facade::class,
 
     ],
 

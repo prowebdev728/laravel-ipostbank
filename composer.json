@@ -7,7 +7,13 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
-        "illuminate/html": "^5.0"
+        "guzzlehttp/guzzle": "^4.0",
+        "yajra/laravel-datatables-oracle": "~6.0",
+        "intervention/image": "^2.3",
+        "unisharp/laravel-filemanager": "^1.6",
+        "unisharp/laravel-ckeditor": "^4.5",
+        "uxweb/sweet-alert": "~1.1",
+        "grimthorr/laravel-user-settings": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
