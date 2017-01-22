@@ -69,8 +69,6 @@ Route::group(['middleware' => 'auth'], function (){
     });
 
 
-
-
     Route::group(['prefix' => 'article'], function (){
         Route::get('/my', 'article\ArticleController@ArticlesInfo');
         Route::get('/view/{article_id}', 'article\ArticleController@ArticleShow');
@@ -86,9 +84,6 @@ Route::group(['middleware' => 'auth'], function (){
     });
 
 
-
-
-
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', 'ProfileController@index');
         Route::post('/avatar/set', 'ProfileController@SetAvatar');
@@ -100,8 +95,6 @@ Route::group(['middleware' => 'auth'], function (){
     Route::group(['prefix' => 'notification'], function () {
         Route::get('/read-all', 'NotificationController@CheckReadAllNotifications');
     });
-
-
 
 
 });
