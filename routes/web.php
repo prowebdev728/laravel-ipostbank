@@ -15,12 +15,6 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 
 
-
-
-
-
-
-
 /**
  * open Routes
  */
