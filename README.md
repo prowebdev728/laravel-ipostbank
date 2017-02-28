@@ -1,5 +1,5 @@
 # laravel-dashboard-adminlte
-Laravel 5.3, MySQL, AdminLTE (Dashboard Template), HTML5/CSS3, JavaScript, jQuery 
+Laravel 5.3, MySQL, AdminLTE (Dashboard Template), HTML5/CSS3, JavaScript, jQuery, DataTables jQuery plugin
 
 https://lazyposts.com
 
