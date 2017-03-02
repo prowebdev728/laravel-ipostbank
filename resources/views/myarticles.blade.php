@@ -79,16 +79,6 @@
                     "targets": 'no-sort',
                     "orderable": false,
                 },
-                /*{
-                        "targets": 0,
-                        "searchable": false,
-                        "render": function ( data, type, row ) {
-                            var  options = '<label><input type="checkbox" class="minimal-gray checkmark checkmark-input" name="quux[1]"></label>';
-                            return options;
-                        },
-                        "orderable": false
-
-                    },*/
                     {
                         "targets": 0,
                         "data": null,
