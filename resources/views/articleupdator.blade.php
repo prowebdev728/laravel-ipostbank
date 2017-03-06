@@ -218,7 +218,6 @@
 <!-- /.content -->
 
 
-
 @include('layouts.footer')
 
 <script>
