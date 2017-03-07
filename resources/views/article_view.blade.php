@@ -130,7 +130,6 @@
 </section>
 <!-- /.content -->
 
-
 @include('layouts.footer')
 @if (Session::has('sweet_alert.alert'))
     @include('sweet::alert')
